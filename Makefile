@@ -1,7 +1,7 @@
 # Makefile P-machine
 # 	Author:	Andy Zaidman
 #	Date:	28/01/2001
-CXX     = g++ -Wno-deprecated
+CXX     = em++
 LEX   	= flex
 YACC	= bison
 YFLAGS  = -b pmachine -d -v

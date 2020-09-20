@@ -3,3 +3,6 @@ Pmachine
 pmachine.tab.*
 pmachine.yy.*
 pmachine.output
+.vscode/
+*.wasm
+*.wat
