@@ -1,0 +1,5 @@
+*.o
+Pmachine
+pmachine.tab.*
+pmachine.yy.*
+pmachine.output
