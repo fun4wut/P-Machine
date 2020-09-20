@@ -6,3 +6,6 @@ pmachine.output
 .vscode/
 *.wasm
 *.wat
+Pmachine.js
+*.data
+*.html

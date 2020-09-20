@@ -1,7 +1,8 @@
-# Makefile P-machine
-# 	Author:	Andy Zaidman
-#	Date:	28/01/2001
-CXX     = em++
+# Makefile P-machine WASM version
+# 	Author:	Simon
+#	Date:	20/09/2020
+
+CXX     = em++ -Wno-everything # Use em++ instead of g++
 LEX   	= flex
 YACC	= bison
 YFLAGS  = -b pmachine -d -v
@@ -16,12 +17,23 @@ clean:
 	rm -f pmachine.yy.c
 	rm -f pmachine.tab.output
 	rm -f pmachine.tab.h
+	rm -f *.wasm
+	rm -f *.wat
+	rm -f *.output
+	rm -f Pmachine.js
+	rm -f *.data
+	rm -f *.html
 
 instructions=instruction.o pop.o mod.o xor.o add.o and.o chk.o cup.o cupi.o dec.o div.o dpl.o ent.o equ.o fjp.o geq.o grt.o hlt.o inc.o ind.o ixa.o ixj.o lda.o ldc.o ldo.o leq.o les.o lod.o movd.o movs.o mst.o mstf.o mul.o neg.o neq.o new.o not.o or.o retf.o retp.o sep.o sli.o smp.o sro.o ssp.o sto.o str.o sub.o ujp.o in.o out.o ldd.o conv.o
 stackelements=stackaddress.o stackelement.o stackinteger.o stackreal.o stackboolean.o stackcharacter.o
 exceptions=executionerror.o compiletimeerror.o
 
 INCinstruction=instruction.h stackmachine.h executionerror.h stackelement.h
+
+pmachine: pmachine.yy.o pmachine.tab.o $(instructions) $(stackelements) $(exceptions) labelcenter.o timecounter.o stackmachine.o main.o pmachine.tab.o pmachine.yy.c
+	$(CXX) -o Pmachine.html $(instructions) $(stackelements) $(exceptions) \
+	labelcenter.o timecounter.o stackmachine.o main.o pmachine.yy.o pmachine.tab.o \
+	--embed-file fibonacci.p --pre-js mod.js
 
 pmachine.tab.c pmachine.tab.h: pmachine.y
 	$(YACC) -b pmachine -d -v pmachine.y
@@ -230,7 +242,6 @@ conv.o: conv.cpp conv.h $(INCinstruction)
 main.o: main.cpp $(INCinstruction) pmachine.h
 	$(CXX) -c main.cpp
 
-pmachine: pmachine.yy.o pmachine.tab.o $(instructions) $(stackelements) $(exceptions) labelcenter.o timecounter.o stackmachine.o main.o pmachine.tab.o pmachine.yy.c
-	$(CXX) -o Pmachine $(instructions) $(stackelements) $(exceptions) labelcenter.o timecounter.o stackmachine.o main.o pmachine.yy.o pmachine.tab.o
+
 
 

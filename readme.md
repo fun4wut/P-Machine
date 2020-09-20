@@ -1,3 +1,9 @@
+# WASM version of PMachine
+
+Compiles to WASM, thus enabling Node.js and browser to run it.
+
+## Before
+
 This PMachine is for course project of Compilation Principles.
 
 Based on [http://fots.ua.ac.be/~pvgorp/professional/teaching/compiler1LIC/pMachine/](http://fots.ua.ac.be/~pvgorp/professional/teaching/compiler1LIC/pMachine/), and you can find all instruction specifications here.
