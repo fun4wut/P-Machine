@@ -30,10 +30,19 @@ exceptions=executionerror.o compiletimeerror.o
 
 INCinstruction=instruction.h stackmachine.h executionerror.h stackelement.h
 
-pmachine: pmachine.yy.o pmachine.tab.o $(instructions) $(stackelements) $(exceptions) labelcenter.o timecounter.o stackmachine.o main.o pmachine.tab.o pmachine.yy.c
+node: pmachine.yy.o pmachine.tab.o $(instructions) $(stackelements) $(exceptions) labelcenter.o timecounter.o stackmachine.o main.o pmachine.tab.o pmachine.yy.c
+	$(CXX) -o Pmachine.js $(instructions) $(stackelements) $(exceptions) \
+	labelcenter.o timecounter.o stackmachine.o main.o pmachine.yy.o pmachine.tab.o \
+	-s NODERAWFS=1 
+
+wasi: pmachine.yy.o pmachine.tab.o $(instructions) $(stackelements) $(exceptions) labelcenter.o timecounter.o stackmachine.o main.o pmachine.tab.o pmachine.yy.c
+	$(CXX) -o Pmachine.wasm $(instructions) $(stackelements) $(exceptions) \
+	labelcenter.o timecounter.o stackmachine.o main.o pmachine.yy.o pmachine.tab.o
+
+browser: pmachine.yy.o pmachine.tab.o $(instructions) $(stackelements) $(exceptions) labelcenter.o timecounter.o stackmachine.o main.o pmachine.tab.o pmachine.yy.c
 	$(CXX) -o Pmachine.html $(instructions) $(stackelements) $(exceptions) \
 	labelcenter.o timecounter.o stackmachine.o main.o pmachine.yy.o pmachine.tab.o \
-	--embed-file fibonacci.p --pre-js mod.js
+	--embed-file fibonacci.p
 
 pmachine.tab.c pmachine.tab.h: pmachine.y
 	$(YACC) -b pmachine -d -v pmachine.y
