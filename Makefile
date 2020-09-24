@@ -7,8 +7,9 @@ LEX   	= flex
 YACC	= bison
 YFLAGS  = -b pmachine -d -v
 
+.PHONY: clean, node, wasi, browser
 
-all: pmachine
+all: node
 
 clean:	
 	rm -f *.o
@@ -33,7 +34,7 @@ INCinstruction=instruction.h stackmachine.h executionerror.h stackelement.h
 node: pmachine.yy.o pmachine.tab.o $(instructions) $(stackelements) $(exceptions) labelcenter.o timecounter.o stackmachine.o main.o pmachine.tab.o pmachine.yy.c
 	$(CXX) -o Pmachine.js $(instructions) $(stackelements) $(exceptions) \
 	labelcenter.o timecounter.o stackmachine.o main.o pmachine.yy.o pmachine.tab.o \
-	-s NODERAWFS=1 
+	-s NODERAWFS=1 -s EXIT_RUNTIME=1
 
 wasi: pmachine.yy.o pmachine.tab.o $(instructions) $(stackelements) $(exceptions) labelcenter.o timecounter.o stackmachine.o main.o pmachine.tab.o pmachine.yy.c
 	$(CXX) -o Pmachine.wasm $(instructions) $(stackelements) $(exceptions) \
