@@ -17,7 +17,7 @@ extern StackMachine Pmachine;
 
 void usage()
 {
-	cout << "USAGE: Pmachine [filename] < -s [numeric value] > < -t [numeric value] > < -h >" << endl << endl;
+	cout << "USAGE: Pmachine [filename] <-s [numeric value]> <-t [numeric value]> <-h>" << endl << endl;
 	cout << "\t -s: stepsize" << endl;
 	cout << "\t -t: number of stackplaces to show\t(by default all)" << endl;
 	cout << "\t -h: show heap" << endl << endl;
@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 		}
 		else
 		{
-			cerr << "File " << argv[1] << " niet beschikbaar" << endl;
+			cerr << "File " << argv[1] << " open failed" << endl;
 			usage();
 			exit(0);
 		}
