@@ -25,7 +25,7 @@ void Out::execute(StackMachine *stack)
 			if(typeid(p1) != typeid(*(stack->fStore[stack->fSP])))
 				throw ExecutionError("instruction out: SP does not point to element of type integer.");
 			
-			cout << *stack->fStore[stack->fSP];
+			cout << "print: " << *stack->fStore[stack->fSP] << endl;
 			
 						delete stack->fStore[stack->fSP];
 			stack->fStore.pop_back();
@@ -38,10 +38,10 @@ void Out::execute(StackMachine *stack)
 			StackCharacter p1;
 			if(typeid(p1) != typeid(*(stack->fStore[stack->fSP])))
 				throw ExecutionError("instruction out: SP does not point to element of type character.");
-			
-			cout << *stack->fStore[stack->fSP];
-			
-						delete stack->fStore[stack->fSP];
+
+			cout << "print: " << *stack->fStore[stack->fSP] << endl;
+
+			delete stack->fStore[stack->fSP];
 			stack->fStore.pop_back();
 			--stack->fSP;
 		
@@ -52,10 +52,10 @@ void Out::execute(StackMachine *stack)
 			StackBoolean p1;
 			if(typeid(p1) != typeid(*(stack->fStore[stack->fSP])))
 				throw ExecutionError("instruction out: SP does not point to element of type boolean.");
-			
-			cout << *stack->fStore[stack->fSP];
-			
-						delete stack->fStore[stack->fSP];
+
+			cout << "print: " << *stack->fStore[stack->fSP] << endl;
+
+			delete stack->fStore[stack->fSP];
 			stack->fStore.pop_back();
 			--stack->fSP;
 		
@@ -67,9 +67,9 @@ void Out::execute(StackMachine *stack)
 			if(typeid(p1) != typeid(*(stack->fStore[stack->fSP])))
 				throw ExecutionError("instruction out: SP does not point to element of type boolean.");
 
-			cout << *stack->fStore[stack->fSP];
-			
-						delete stack->fStore[stack->fSP];
+			cout << "print: " << *stack->fStore[stack->fSP] << endl;
+
+			delete stack->fStore[stack->fSP];
 			stack->fStore.pop_back();
 			--stack->fSP;
 		
@@ -88,8 +88,8 @@ void Out::execute(StackMachine *stack)
 					throw ExecutionError("instruction out: SP - 1 does not point to element of type real.");
 								
 				cout.precision(stack->fStore[stack->fSP]->getValue());
-				cout << *stack->fStore[stack->fSP - 1];
-				
+				cout << "print: " << *stack->fStore[stack->fSP - 1] << endl;
+
 				delete stack->fStore[stack->fSP];
 				delete stack->fStore[stack->fSP - 1];
 				stack->fStore.pop_back();
@@ -100,9 +100,9 @@ void Out::execute(StackMachine *stack)
 			{
 				if(typeid(p2) != typeid(*(stack->fStore[stack->fSP])))
 					throw ExecutionError("instruction out: SP does not point to element of type real.");
-				
-				cout << *stack->fStore[stack->fSP];
-				
+
+				cout << "print: " << *stack->fStore[stack->fSP] << endl;
+
 				delete stack->fStore[stack->fSP];
 				stack->fStore.pop_back();
 				--stack->fSP;

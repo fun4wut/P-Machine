@@ -141,8 +141,7 @@ void StackMachine::showHeap()
 
 void StackMachine::showParameters()
 {
-	cout << "\tSP: " << fSP << ",\tNP: " << fNP << ",\tIC: " << fIC << "," << endl;
-	cout << "\tEP: " << fEP << ",\tMP: " << fMP << ",\tPC: " << fPC << endl;
+	cout << "\tSP: " << fSP << ",\tPC: " << fPC << endl;
 	cout << "******" << endl;
 }
 
