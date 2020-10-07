@@ -1,4 +1,3 @@
-// or.h
 
 #ifndef OR_H
 #define OR_H
@@ -14,10 +13,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the or instruction.
-*	@author 	Andy Zaidman
-*/
+
 class Or : public Instruction
 {
 	public:

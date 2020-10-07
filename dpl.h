@@ -1,4 +1,3 @@
-// dpl.h
 
 
 #ifndef DPL_H
@@ -15,10 +14,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the dpl-instruction: duplicates the uppermost stackentry
-*	@author 	Andy Zaidman
-*/
+
 class Dpl : public Instruction
 {
 	public:

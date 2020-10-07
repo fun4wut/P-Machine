@@ -1,4 +1,3 @@
-// compiletimeerror.h
 
 #ifndef COMPILETIMEERROR_H
 #define COMPILETIMEERROR_H
@@ -7,10 +6,7 @@
 using namespace std;
 
 
-/**
-* 	@doc		Standard exception object used for compiletime-errors
-*	@author 	Andy Zaidman
-*/
+
 class CompileTimeError
 {
 	public:

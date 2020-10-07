@@ -1,31 +1,18 @@
-//conv.cpp
 
 #include "conv.h"
 
-/** 
-*	Constructor
-*	@param type1	specifies the original type (StackElementType)
-*	@param type2	specifies the type you want to convert to (StackElementType)
-*/
+
 Conv::Conv(StackElementType type1, StackElementType type2) : fType1(type1), fType2(type2) {}
 
 
-/** 
-*	Destructor
-*/
+
 Conv::~Conv() {}
 
 
-/** 
-*	Checks the contents of the stack and then performs the addition.
-*	@return			none
-*	@param stack	the machine on which the addition is performed (StackMachine*)
-*	@exception		ExecutionError
-*/
+
 void Conv::execute(StackMachine *stack) 
 {
-	// check if the stack contains at least one entries
-	if(stack->fSP < 0)
+		if(stack->fSP < 0)
 		throw ExecutionError("instruction conv: requires 1 stackelement to be present.");
 	
 	int integervalue;
@@ -36,8 +23,7 @@ void Conv::execute(StackMachine *stack)
 		{
 			StackInteger p1;
 
-			// check if the uppermost stackentry is of type integer
-			if(typeid(p1) != typeid(*(stack->fStore[stack->fSP])))
+						if(typeid(p1) != typeid(*(stack->fStore[stack->fSP])))
 				throw ExecutionError("instruction conv: SP does not point to element of type integer.");
 			
 			integervalue = stack->fStore[stack->fSP]->getValue();
@@ -47,8 +33,7 @@ void Conv::execute(StackMachine *stack)
 		case real:
 		{
 			StackReal p1;
-			// check if the uppermost stackentry is of type real
-			if(typeid(p1) != typeid(*(stack->fStore[stack->fSP])))
+						if(typeid(p1) != typeid(*(stack->fStore[stack->fSP])))
 				throw ExecutionError("instruction conv: SP does not point to element of type real.");
 			
 			double realvalue = stack->fStore[stack->fSP]->getReal();
@@ -78,8 +63,7 @@ void Conv::execute(StackMachine *stack)
 		case character:
 		{
 			StackCharacter p1;
-			// check if the uppermost stackentry is of type character
-			if(typeid(p1) != typeid(*(stack->fStore[stack->fSP])))
+						if(typeid(p1) != typeid(*(stack->fStore[stack->fSP])))
 				throw ExecutionError("instruction conv: SP does not point to element of type character.");
 			
 			integervalue = stack->fStore[stack->fSP]->getValue();
@@ -89,8 +73,7 @@ void Conv::execute(StackMachine *stack)
 		case boolean:
 		{
 			StackBoolean p1;
-			// check if the uppermost stackentry is of type boolean
-			if(typeid(p1) != typeid(*(stack->fStore[stack->fSP])))
+						if(typeid(p1) != typeid(*(stack->fStore[stack->fSP])))
 				throw ExecutionError("instruction conv: SP does not point to element of type boolean.");
 
 			integervalue = stack->fStore[stack->fSP]->getBoolean();
@@ -100,8 +83,7 @@ void Conv::execute(StackMachine *stack)
 		case address:
 		{
 			StackAddress p1;
-			// check if the uppermost stackentry is of type address
-			if(typeid(p1) != typeid(*(stack->fStore[stack->fSP])))
+						if(typeid(p1) != typeid(*(stack->fStore[stack->fSP])))
 				throw ExecutionError("instruction conv: SP does not point to element of type address.");
 			
 			integervalue = stack->fStore[stack->fSP]->getValue();
@@ -131,17 +113,11 @@ void Conv::execute(StackMachine *stack)
 			break;
 	}
 	
-	// adding cost of this instruction
-	stack->fTime.count("conv");
+		stack->fTime.count("conv");
 
 }
 
-/** 
-*	Prints the instuction into an outputstream
-*	@return			reference to ostream filled with the printed instruction
-*	@param os		reference to ostream (ostream&)	
-*	@exception		none
-*/
+
 ostream& Conv::print(ostream &os) const
 {
 	os << "conv " << printStackElementType(fType1) << " " << printStackElementType(fType2);

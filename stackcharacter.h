@@ -1,4 +1,3 @@
-// stackcharacter.h
 
 #ifndef STACKCHARACTER_H
 #define STACKCHARACTER_H

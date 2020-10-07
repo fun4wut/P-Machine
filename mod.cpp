@@ -1,6 +1,3 @@
-//
-// Created by zerol on 10/1/19.
-//
 
 #include "mod.h"
 
@@ -15,11 +12,9 @@ void Mod::execute(StackMachine *stack) {
         throw ExecutionError("instruction mod: SP - 1 does not point to element of type integer.");
 
 
-    // actual addition
-    stack->fStore[stack->fSP - 1]->mod(stack->fStore[stack->fSP]);
+        stack->fStore[stack->fSP - 1]->mod(stack->fStore[stack->fSP]);
 
-    // SP := SP - 1
-    delete stack->fStore[stack->fSP];
+        delete stack->fStore[stack->fSP];
     stack->fStore[stack->fSP] = 0;
     stack->fStore.pop_back();
     --stack->fSP;

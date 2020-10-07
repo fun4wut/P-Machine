@@ -1,6 +1,3 @@
-//
-// Created by zerol on 10/1/19.
-//
 
 #ifndef P_MOD_H
 #define P_MOD_H
@@ -24,4 +21,4 @@ public:
     ostream& print(ostream &os) const;
 };
 
-#endif //P_MOD_H
+#endif 

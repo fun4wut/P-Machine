@@ -1,4 +1,3 @@
-// and.h
 
 #ifndef AND_H
 #define AND_H
@@ -14,10 +13,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the and instruction
-*	@author 	Andy Zaidman
-*/
+
 class And : public Instruction
 {
 	public:

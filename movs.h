@@ -1,4 +1,3 @@
-// movs.h
 
 
 #ifndef MOVS_H
@@ -16,10 +15,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the "move static" instruction. Copies an area of size q to the top of the stack from the address that is located at the top of the stack
-*	@author 	Andy Zaidman
-*/
+
 class Movs : public Instruction
 {
 	public:

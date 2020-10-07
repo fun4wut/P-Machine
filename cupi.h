@@ -1,4 +1,3 @@
-// cupi.h
 
 #ifndef CUPI_H
 #define CUPI_H
@@ -14,10 +13,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the cupi-instruction: call user procedure indirectly
-*	@author 	Andy Zaidman
-*/
+
 class Cupi : public Instruction
 {
 	public:

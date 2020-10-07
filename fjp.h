@@ -1,4 +1,3 @@
-// fjp.h
 
 
 #ifndef FJP_H
@@ -16,10 +15,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements jump on false
-*	@author 	Andy Zaidman
-*/
+
 class Fjp : public Instruction
 {
 	public:

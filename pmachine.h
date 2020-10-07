@@ -1,4 +1,3 @@
-//pmachine.h
 
 #ifndef PMACHINE_H
 #define PMACHINE_H

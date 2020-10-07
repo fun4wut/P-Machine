@@ -1,4 +1,3 @@
-// neg.h
 
 #ifndef NEG_H
 #define NEG_H
@@ -14,10 +13,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the "negation" instruction. Replace the value of the integer/real at STORE[SP] with "-value".
-*	@author 	Andy Zaidman
-*/
+
 class Neg : public Instruction
 {
 	public:

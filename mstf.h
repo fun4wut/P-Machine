@@ -1,4 +1,3 @@
-// mstf.h
 
 #ifndef MSTF_H
 #define MSTF_H
@@ -14,10 +13,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the "mark stack for formal procedure" instruction
-*	@author 	Andy Zaidman
-*/
+
 class Mstf : public Instruction
 {
 	public:

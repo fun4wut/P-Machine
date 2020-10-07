@@ -59,14 +59,12 @@ using namespace std;
 #include "out.h"
 #include "conv.h"
 
-//#define YACCOUTPUT
 
 
 extern StackMachine Pmachine;
 extern int linecount;
 extern int yylex();
 
-// prototypes
 void yyerror(string msg);
 
 
@@ -154,12 +152,9 @@ void yyerror(string msg);
 %type	<type>	arbitrary
 %%
 
-/////////////////////////////////////////////////////////////////////////////
-// rules section
 
-// place your YACC rules here (there must be at least one)
 
-Grammar				: /* empty */
+Grammar				: 
 				| InstructionSequence
 				;
 EndlineRepeater			: EndlineRepeater endline
@@ -1357,8 +1352,6 @@ label_introduction		: defininglabel
 
 %%
 
-/////////////////////////////////////////////////////////////////////////////
-// programs section
 
 void yyerror(string msg)
 {

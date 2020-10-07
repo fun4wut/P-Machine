@@ -1,5 +1,4 @@
- //main.cpp
-
+ 
 
 #include "stackmachine.h"
 #include "stackelement.h"

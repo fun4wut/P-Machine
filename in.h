@@ -1,4 +1,3 @@
-// in.h
 
 
 #ifndef IN_H
@@ -15,10 +14,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Reads from the standard input
-*	@author 	Andy Zaidman
-*/
+
 class In : public Instruction
 {
 	public:

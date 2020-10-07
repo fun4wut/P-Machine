@@ -1,4 +1,3 @@
-// sto.h
 
 
 #ifndef STO_H
@@ -15,10 +14,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the store instruction: stores in STORE[SP] in the location pointed to by STORE[SP-1].
-*	@author 	Andy Zaidman
-*/
+
 class Sto : public Instruction
 {
 	public:

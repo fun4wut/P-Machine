@@ -1,4 +1,3 @@
-// ind.h
 
 
 #ifndef IND_H
@@ -15,10 +14,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Loads indirectly using the highest stack location.
-*	@author 	Andy Zaidman
-*/
+
 class Ind : public Instruction
 {
 	public:

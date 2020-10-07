@@ -1,4 +1,3 @@
-// LabelCenter.h
 
 
 #ifndef LABELCENTER_H
@@ -12,10 +11,7 @@
 using namespace std;
 
 
-/**
-* 	@doc		Object to manage all labels that are introduced in the programtext. It associates the labelname with the internal number of the instruction following the label
-*	@author 	Andy Zaidman
-*/
+
 class LabelCenter
 {
 	public:

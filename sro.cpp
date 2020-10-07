@@ -1,27 +1,15 @@
-// sro.cpp
 
 #include "sro.h"
 
-/** 
-*	Constructor
-*	@param type		type of data to store (StackElementType)
-*	@param p		absolute address to store data at (int)
-*/
+
 Sro::Sro(StackElementType type, int q) : fType(type), fQ(q) {}
 
 
-/** 
-*	Destructor
-*/
+
 Sro::~Sro() {}
 
 
-/** 
-*	Checks whether the highest stack position is occupied by an element of the right type and then stores it at the given abolsute address
-*	@return			none
-*	@param stack	the machine on which the instruction is performed (StackMachine*)
-*	@exception		ExecutionError
-*/
+
 void Sro::execute(StackMachine *stack)
 {
 	if(stack->fSP < 1)
@@ -90,8 +78,7 @@ void Sro::execute(StackMachine *stack)
 	
 	if(fQ < 0)
 	{
-		// address on the heap
-		if(fQ < stack->fNP)
+				if(fQ < stack->fNP)
 			throw ExecutionError("instruction ind: invalid heap address.");
 		else
 		{
@@ -100,8 +87,7 @@ void Sro::execute(StackMachine *stack)
 	}
 	else
 	{
-		// address on the stack
-		if(fQ > stack->fSP)
+				if(fQ > stack->fSP)
 			throw ExecutionError("instruction ind: invalid stack address.");
 		else
 		{
@@ -113,17 +99,11 @@ void Sro::execute(StackMachine *stack)
 
 	--stack->fSP;
 	
-	// adding cost of this instruction
-	stack->fTime.count("sro");
+		stack->fTime.count("sro");
 }
 
 
-/** 
-*	Prints the instuction into an outputstream
-*	@return			reference to ostream filled with the printed instruction
-*	@param os		reference to ostream (ostream&)	
-*	@exception		none
-*/
+
 ostream& Sro::print(ostream &os) const
 {
 	os << "sro " << printStackElementType(fType) << " " << fQ;

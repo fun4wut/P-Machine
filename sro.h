@@ -1,4 +1,3 @@
-// sro.h
 
 
 #ifndef SRO_H
@@ -15,10 +14,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the store instruction which stores at an absolute address
-*	@author 	Andy Zaidman
-*/
+
 class Sro : public Instruction
 {
 	public:

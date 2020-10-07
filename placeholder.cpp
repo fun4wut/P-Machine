@@ -1,4 +1,3 @@
-// placeholder.cpp
 
 #include "placeholder.h"
 

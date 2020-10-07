@@ -1,4 +1,3 @@
-// str.h
 
 
 #ifndef STR_H
@@ -16,10 +15,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the "store relative" instruction
-*	@author 	Andy Zaidman
-*/
+
 
 class Str : public Instruction
 {

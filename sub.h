@@ -1,4 +1,3 @@
-// sub.h
 
 
 #ifndef SUB_H
@@ -15,10 +14,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the subtraction by subtracting the 2 uppermost stackpositions and replacing them by the result
-*	@author 	Andy Zaidman
-*/
+
 class Sub : public Instruction
 {
 	public:
@@ -28,8 +24,7 @@ class Sub : public Instruction
 		ostream& print(ostream &os) const;	
 
 	private:
-		/// keeps track of the types (integer or real)
-		StackElementType fType;
+				StackElementType fType;
 		
 };
 

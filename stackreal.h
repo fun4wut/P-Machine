@@ -1,14 +1,10 @@
-// stackreal.h
 
 #ifndef STACKREAL_H
 #define STACKREAL_H
 
 #include "stackelement.h"
 
-/**
-*	@doc 	Container for real type (implemented via C++ double type, precision is platform dependant)
-*	@author	Andy Zaidman
-*/
+
 class StackReal : public StackElement
 {
 	public:

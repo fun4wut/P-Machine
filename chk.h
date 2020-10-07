@@ -1,4 +1,3 @@
-// chk.h
 
 
 #ifndef CHK_H
@@ -16,10 +15,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Check whether the highest stack value lies between p and q, inclusive. Halt with error message if not.
-*	@author 	Andy Zaidman
-*/
+
 class Chk : public Instruction
 {
 	public:

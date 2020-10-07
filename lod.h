@@ -1,4 +1,3 @@
-// lod.h
 
 
 #ifndef LOD_H
@@ -17,10 +16,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements loading for a given difference in nesting depths p and a given relative address q.
-*	@author 	Andy Zaidman
-*/
+
 class Lod : public Instruction
 {
 	public:

@@ -1,23 +1,14 @@
 #include "new.h"
 
-/** 
-*	Constructor
-*/
+
 New::New() {}
 
 
-/** 
-*	Destructor
-*/
+
 New::~New() {}
 
 
-/** 
-*	Checks whether the two uppermost stackpositions contain elements of type integer and address respectively and then replaces them with a pointer to the area on the heap
-*	@return			none
-*	@param stack	the machine on which the operation is performed (StackMachine*)
-*	@exception		ExecutionError
-*/
+
 void New::execute(StackMachine *stack)
 {
 	StackInteger p1;
@@ -29,8 +20,7 @@ void New::execute(StackMachine *stack)
 	if(typeid(p2) != typeid(*stack->fStore[stack->fSP - 1]))
 		throw ExecutionError("instruction new: STORE[SP-1] does not contain element of type address");
 	
-	// prepare the heap by adding empty pointers to the vector
-	for(int i = 0; i < stack->fStore[stack->fSP]->getValue(); ++i)
+		for(int i = 0; i < stack->fStore[stack->fSP]->getValue(); ++i)
 	{
 		stack->fHeap.push_back(new StackElement());
 	}
@@ -62,18 +52,12 @@ void New::execute(StackMachine *stack)
 	stack->fStore.pop_back();
 	stack->fSP -= 2;
 	
-	// adding cost of this instruction
-	stack->fTime.count("new");
+		stack->fTime.count("new");
 
 }
 
 
-/** 
-*	Prints the instuction into an outputstream
-*	@return			reference to ostream filled with the printed instruction
-*	@param os		reference to ostream (ostream&)	
-*	@exception		none
-*/
+
 ostream& New::print(ostream &os) const
 {	
 	os << "new";

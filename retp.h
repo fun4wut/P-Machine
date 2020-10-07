@@ -1,4 +1,3 @@
-// ret.h
 
 
 #ifndef RETP_H
@@ -16,10 +15,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the "return from procedure" instruction
-*	@author 	Andy Zaidman
-*/
+
 class Retp : public Instruction
 {
 	public:

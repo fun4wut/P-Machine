@@ -1,29 +1,17 @@
-// ldc.cpp
 
 #include "ldc.h"
 
-/** 
-*	Constructor
-*	@param type			indicates which kind of element is loaded(StackElementType)
-*	@param constant		pointer to element which will be loaded at runtime(StackElement*)
-*/
+
 Ldc::Ldc(StackElementType type, StackElement *constant) : fType(type), fConstant(constant) {}
 
 
-/** 
-*	Destructor
-*/
+
 Ldc::~Ldc()
 {
 	delete fConstant;
 }
 
-/** 
-*	Checks whether the indicated type is the same as the loaded type and then loads it.
-*	@return			none
-*	@param stack	the machine on which the operation is performed (StackMachine*)
-*	@exception		ExecutionError
-*/
+
 void Ldc::execute(StackMachine *stack)
 {
 	switch(fType)
@@ -32,8 +20,7 @@ void Ldc::execute(StackMachine *stack)
 		{
 			StackInteger p1;
 
-			// check if constant is of type integer
-			if(typeid(p1) != typeid(*fConstant))
+						if(typeid(p1) != typeid(*fConstant))
 			{
 				throw ExecutionError("instruction ldc: type of constant is not of type integer.");
 			}
@@ -47,8 +34,7 @@ void Ldc::execute(StackMachine *stack)
 		case real:
 		{
 			StackReal p1;
-			// check if constant is of type real
-			if(typeid(p1) != typeid(*fConstant))
+						if(typeid(p1) != typeid(*fConstant))
 			{
 				throw ExecutionError("instruction ldc: type of constant is not of type real.");
 			}
@@ -63,8 +49,7 @@ void Ldc::execute(StackMachine *stack)
 		{
 			StackBoolean p1;
 			
-			// check if constant is of type boolean
-			if(typeid(p1) != typeid(*fConstant))
+						if(typeid(p1) != typeid(*fConstant))
 			{
 				throw ExecutionError("instruction ldc: type of constant is not of type boolean.");
 			}
@@ -79,8 +64,7 @@ void Ldc::execute(StackMachine *stack)
 		{
 			StackCharacter p1;
 			
-			// check if constant is of type character
-			if(typeid(p1) != typeid(*fConstant))
+						if(typeid(p1) != typeid(*fConstant))
 			{
 				throw ExecutionError("instruction ldc: type of constant is not of type character.");
 			}
@@ -95,8 +79,7 @@ void Ldc::execute(StackMachine *stack)
 		{
 			StackAddress p1;
 
-			// check if constant is of type address
-			
+						
 			if(typeid(p1) != typeid(*fConstant))
 			{
 				throw ExecutionError("instruction ldc: type of constant is not of type address.");
@@ -110,21 +93,14 @@ void Ldc::execute(StackMachine *stack)
 		}
 	}
 	
-	// fSP = fSP + 1
-	++stack->fSP;
+		++stack->fSP;
 	
-	// adding cost of this instruction
-	stack->fTime.count("ldc");
+		stack->fTime.count("ldc");
 
 }
 
 
-/** 
-*	Prints the instuction into an outputstream
-*	@return			reference to ostream filled with the printed instruction
-*	@param os		reference to ostream (ostream&)	
-*	@exception		none
-*/
+
 ostream& Ldc::print(ostream &os) const
 {
 	os << "ldc " << printStackElementType(fType) << " " << *fConstant;

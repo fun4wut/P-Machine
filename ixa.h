@@ -1,4 +1,3 @@
-// ixa.h
 
 
 #ifndef IXA_H
@@ -15,10 +14,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Computation of indexed address. STORE[SP-1] contains a start address, STORE[SP] contains the index of the selected subarray and q contains the size of the subarray.
-*	@author 	Andy Zaidman
-*/
+
 class Ixa : public Instruction
 {
 	public:

@@ -1,29 +1,16 @@
-// lod.cpp
 
 #include "lod.h"
 
 
-/** 
-*	Constructor
-*	@param type	type of the element to be loaded (StackElementType)
-*	@param p	difference in nesting depths (int)
-*	@param q	relative address (int)
-*/
+
 Lod::Lod(StackElementType type, int p, int q) : fType(type), fP(p), fQ(q) {}
 
 
-/** 
-*	Destructor
-*/
+
 Lod::~Lod() {}
 
 
-/** 
-*	Checks whether the element at the give address is of the right type, the loads it to STORE[SP]
-*	@return			none
-*	@param stack	the machine on which the addition is performed (StackMachine*)
-*	@exception		ExecutionError
-*/
+
 void Lod::execute(StackMachine *stack)
 {
 
@@ -117,18 +104,12 @@ void Lod::execute(StackMachine *stack)
 	
 	++stack->fSP;
 	
-	// adding cost of this instruction
-	stack->fTime.count("lod");
+		stack->fTime.count("lod");
 
 }
 
 
-/** 
-*	Prints the instuction into an outputstream
-*	@return			reference to ostream filled with the printed instruction
-*	@param os		reference to ostream (ostream&)	
-*	@exception		none
-*/
+
 ostream& Lod::print(ostream &os) const
 {
 	os << "lod " << printStackElementType(fType) << " " << fP << " " << fQ;

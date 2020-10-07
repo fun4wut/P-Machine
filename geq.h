@@ -1,4 +1,3 @@
-// geq.h
 
 #ifndef GEQ_H
 #define GEQ_H
@@ -14,10 +13,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the geq-operation (greater or equal)
-*	@author 	Andy Zaidman
-*/
+
 class Geq : public Instruction
 {
 	public:

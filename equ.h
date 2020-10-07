@@ -1,4 +1,3 @@
-// equ.h
 
 #ifndef EQU_H
 #define EQU_H
@@ -14,10 +13,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the "equal" instruction. 
-*	@author 	Andy Zaidman
-*/
+
 class Equ : public Instruction
 {
 	public:

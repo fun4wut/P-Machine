@@ -1,4 +1,3 @@
-// ldd.h
 
 
 #ifndef LDD_H
@@ -15,10 +14,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the ldd-instruction. Aceesses descriptor arrays indirectly.
-*	@author 	Andy Zaidman
-*/
+
 class Ldd : public Instruction
 {
 	public:

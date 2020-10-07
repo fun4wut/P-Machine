@@ -1,26 +1,15 @@
-// movs.cpp
 
 #include "movs.h"
 
-/** 
-*	Constructor
-*	@param q	number of memory locations to copy (int)
-*/
+
 Movs::Movs(int q) : fQ(q) {}
 
 
-/** 
-*	Destructor
-*/
+
 Movs::~Movs() {}
 
 
-/** 
-*	Area to be copied has static size (q). Here the area is copied, either from the stack or from the heap to the area above STORE[SP]
-*	@return			none
-*	@param stack	the machine on which the operation is performed (StackMachine*)
-*	@exception		ExecutionError
-*/
+
 void Movs::execute(StackMachine *stack)
 {	
 	StackAddress p;
@@ -36,9 +25,7 @@ void Movs::execute(StackMachine *stack)
 	
 	if(newaddress < 0)
 	{	
-		// copying a block from the heapspace to the top of the stack
-		// pay attention to the reverse with respect to what the book describes on p50
-	
+					
 		StackInteger p1;
 		StackBoolean p2;
 		StackAddress p3;
@@ -64,9 +51,7 @@ void Movs::execute(StackMachine *stack)
 	}
 	else
 	{
-		// copying a block from the stackspace to the top of the stack
-		// pay attention to the reverse with respect to what the book describes on p50
-
+				
 		StackInteger p1;
 		StackBoolean p2;
 		StackAddress p3;
@@ -93,17 +78,11 @@ void Movs::execute(StackMachine *stack)
 	
 	stack->fSP = stack->fSP + fQ - 1;
 	
-	// adding cost of this instruction
-	stack->fTime.count("movs");
+		stack->fTime.count("movs");
 
 }
 
-/** 
-*	Prints the instuction into an outputstream
-*	@return			reference to ostream filled with the printed instruction
-*	@param os		reference to ostream (ostream&)	
-*	@exception		none
-*/
+
 ostream& Movs::print(ostream &os) const
 {
 	os << "movs " << fQ << endl;

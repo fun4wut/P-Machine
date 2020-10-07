@@ -1,4 +1,3 @@
-// movd.h
 
 
 #ifndef MOVD_H
@@ -16,10 +15,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the dynamic move instruction. Copies an array from a given array descriptor (to be found at relative address q).
-*	@author 	Andy Zaidman
-*/
+
 class Movd : public Instruction
 {
 	public:

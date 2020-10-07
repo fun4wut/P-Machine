@@ -1,4 +1,3 @@
-// stackaddress.h
 
 #ifndef STACKADDRESS_H
 #define STACKADDRESS_H
@@ -6,10 +5,7 @@
 #include "stackelement.h"
 
 
-/**
-*	@doc 	Container for address type
-*	@author	Andy Zaidman
-*/
+
 class StackAddress : public StackElement
 {
 	public:

@@ -1,4 +1,3 @@
-// sli.h
 
 
 #ifndef SLI_H
@@ -15,10 +14,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the sli instruction: stores the highest stackposition at STORE[SP-1]
-*	@author 	Andy Zaidman
-*/
+
 class Sli : public Instruction
 {
 	public:

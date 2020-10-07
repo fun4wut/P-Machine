@@ -1,4 +1,3 @@
-// leq.h
 
 #ifndef LEQ_H
 #define LEQ_H
@@ -14,10 +13,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the les-operation (less or equal)
-*	@author 	Andy Zaidman
-*/
+
 class Leq : public Instruction
 {
 	public:

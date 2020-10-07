@@ -1,4 +1,3 @@
-// inc.h
 
 
 #ifndef INC_H
@@ -16,10 +15,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Increments the element at STORE[SP]
-*	@author 	Andy Zaidman
-*/
+
 class Inc : public Instruction
 {
 	public:

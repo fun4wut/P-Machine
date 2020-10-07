@@ -1,27 +1,16 @@
-// sto.cpp
 
 #include "sto.h"
 
 
-/** 
-*	Constructor
-*	@param type		specifies on which type is to be stored (StackElementType)
-*/
+
 Sto::Sto(StackElementType type) : fType(type) {}
 
 
-/** 
-*	Destructor
-*/
+
 Sto::~Sto() {}
 
 
-/** 
-*	Checks the contents of the stack and then performs the store operation.
-*	@return			none
-*	@param stack	the machine on which the instruction is performed (StackMachine*)
-*	@exception		ExecutionError
-*/
+
 void Sto::execute(StackMachine *stack)
 {
 	StackAddress p;
@@ -108,8 +97,7 @@ void Sto::execute(StackMachine *stack)
 	{
 		if(stack->fStore[stack->fSP - 1]->getValue() > stack->fSP - 2) 	
 		{
-			// -2 because the SP will be decreased by 2 as a result of this operation
-			
+						
 			throw ExecutionError("instruction sto: invalid stack address.");
 		}
 		else
@@ -126,16 +114,10 @@ void Sto::execute(StackMachine *stack)
 
 	stack->fSP -= 2;
 	
-	// adding cost of this instruction
-	stack->fTime.count("sto");
+		stack->fTime.count("sto");
 }
 
-/** 
-*	Prints the instuction into an outputstream
-*	@return			reference to ostream filled with the printed instruction
-*	@param os		reference to ostream (ostream&)	
-*	@exception		none
-*/
+
 ostream& Sto::print(ostream &os) const
 {
 	os << "sto " << printStackElementType(fType);

@@ -1,4 +1,3 @@
-// ujp.h
 
 
 #ifndef UJP_H
@@ -16,10 +15,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the unconditional jump by translating the label to the correct instruction.
-*	@author 	Andy Zaidman
-*/
+
 class Ujp : public Instruction
 {
 	public:

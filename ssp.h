@@ -1,4 +1,3 @@
-// ssp.h
 
 
 #ifndef SSP_H
@@ -16,10 +15,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the "set stack pointer" instruction
-*	@author 	Andy Zaidman
-*/
+
 class Ssp : public Instruction
 {
 	public:

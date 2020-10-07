@@ -1,4 +1,3 @@
-// dec.h
 
 
 #ifndef DEC_H
@@ -16,10 +15,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Increments the element at STORE[SP]
-*	@author 	Andy Zaidman
-*/
+
 class Dec : public Instruction
 {
 	public:

@@ -1,4 +1,3 @@
-// new.h
 
 
 #ifndef NEW_H
@@ -16,10 +15,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the new instruction. Leaves a pointer on top of the stack.
-*	@author 	Andy Zaidman
-*/
+
 class New : public Instruction
 {
 	public:

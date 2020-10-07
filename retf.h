@@ -1,4 +1,3 @@
-// retf.h
 
 
 #ifndef RETF_H
@@ -16,10 +15,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the "return from function" instruction: the return value is put on top of the stack
-*	@author 	Andy Zaidman
-*/
+
 class Retf : public Instruction
 {
 	public:

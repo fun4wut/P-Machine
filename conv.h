@@ -1,4 +1,3 @@
-// conv.h
 
 
 #ifndef CONV_H
@@ -14,10 +13,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-*	@doc	Implements a conversion instruction: converts the element at STORE[SP]
-*	@author	Andy Zaidman
-*/
+
 class Conv : public Instruction
 {
 	public:

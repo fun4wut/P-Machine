@@ -1,4 +1,3 @@
-// neq.h
 
 #ifndef NEQ_H
 #define NEQ_H
@@ -14,10 +13,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the "not equal" instruction. 
-*	@author 	Andy Zaidman
-*/
+
 class Neq : public Instruction
 {
 	public:

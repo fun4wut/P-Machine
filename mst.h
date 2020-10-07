@@ -1,4 +1,3 @@
-// mst.h
 
 
 #ifndef MST_H
@@ -16,10 +15,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the "mark stack" instruction
-*	@author 	Andy Zaidman
-*/
+
 class Mst : public Instruction
 {
 	public:

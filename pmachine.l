@@ -10,10 +10,7 @@ using namespace std;
 #include "pmachine.tab.h"
 extern int linecount;
 
-// for debugging
-	//#define LEXOUTPUT
-// end debugging
-
+	
 %}
 
 %%
@@ -563,6 +560,4 @@ f		{
 							
 %%
 
-/////////////////////////////////////////////////////////////////////////////
-// programs section
 

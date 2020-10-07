@@ -1,27 +1,16 @@
-// ixa.cpp
 
 #include "ixa.h"
 
 
-/** 
-*	Constructor
-*	@param q	the size of the subarray (int)
-*/
+
 Ixa::Ixa(int q) : fQ(q) {}
 
 
-/** 
-*	Destructor
-*/
+
 Ixa::~Ixa() {}
 
 
-/** 
-*	Checks whether the 2 uppermost stackpositions contain an integer and an address respectively and then performs the compuation. Leaves an address at STORE[SP]
-*	@return			none
-*	@param stack	the machine on which the operation is performed (StackMachine*)
-*	@exception		ExecutionError
-*/
+
 void Ixa::execute(StackMachine *stack)
 {
 	StackAddress p1;
@@ -45,17 +34,11 @@ void Ixa::execute(StackMachine *stack)
 	
 	stack->fStore[stack->fSP] = new StackAddress(newaddress);
 	
-	// adding cost of this instruction
-	stack->fTime.count("ixa");
+		stack->fTime.count("ixa");
 }
 
 
-/** 
-*	Prints the instuction into an outputstream
-*	@return			reference to ostream filled with the printed instruction
-*	@param os		reference to ostream (ostream&)	
-*	@exception		none
-*/
+
 ostream& Ixa::print(ostream &os) const
 {
 	os << "ixa " << fQ;

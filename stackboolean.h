@@ -1,4 +1,3 @@
-// stackboolean.h
 
 
 #ifndef STACKBOOLEAN_H
@@ -7,10 +6,7 @@
 #include "stackelement.h"
 
 
-/**
-*	@doc 	Container for boolean type
-*	@author	Andy Zaidman
-*/
+
 class StackBoolean : public StackElement
 {
 	public:

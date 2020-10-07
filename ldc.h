@@ -1,4 +1,3 @@
-// ldc.h
 
 #ifndef LDC_H
 #define LDC_H
@@ -14,10 +13,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the ldc-instruction (load constant)
-*	@author 	Andy Zaidman
-*/
+
 class Ldc : public Instruction
 {
 	public:

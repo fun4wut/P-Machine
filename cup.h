@@ -1,4 +1,3 @@
-// cup.h
 
 
 #ifndef CUP_H
@@ -16,10 +15,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the "call user procedure" instruction.
-*	@author 	Andy Zaidman
-*/
+
 class Cup : public Instruction
 {
 	public:

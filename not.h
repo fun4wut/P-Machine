@@ -1,4 +1,3 @@
-// not.h
 
 #ifndef NOT_H
 #define NOT_H
@@ -14,10 +13,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the not instruction.
-*	@author 	Andy Zaidman
-*/
+
 class Not : public Instruction
 {
 	public:

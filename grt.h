@@ -1,4 +1,3 @@
-// grt.h
 
 #ifndef GRT_H
 #define GRT_H
@@ -14,10 +13,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the grt-operation
-*	@author 	Andy Zaidman
-*/
+
 class Grt : public Instruction
 {
 	public:

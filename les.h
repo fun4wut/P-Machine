@@ -1,4 +1,3 @@
-// Les.h
 
 #ifndef LES_H
 #define LES_H
@@ -14,10 +13,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the les-operation
-*	@author 	Andy Zaidman
-*/
+
 class Les : public Instruction
 {
 	public:

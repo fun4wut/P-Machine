@@ -1,4 +1,3 @@
-// ldo.h
 
 #ifndef LDO_H
 #define LDO_H
@@ -14,10 +13,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the ldo-instruction. Load from absolute address.
-*	@author 	Andy Zaidman
-*/
+
 class Ldo : public Instruction
 {
 	public:

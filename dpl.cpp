@@ -1,26 +1,15 @@
-// dpl.cpp
 
 #include "dpl.h"
 
-/** 
-*	Constructor
-*	@param type		specifies which type to duplicate (StackElementType)
-*/
+
 Dpl::Dpl(StackElementType type) : fType(type) {}
 
 
-/** 
-*	Destructor
-*/
+
 Dpl::~Dpl() {}
 
 
-/** 
-*	Checks whether the STORE[SP]-element is of the right type and then duplicates it
-*	@return			none
-*	@param stack	the machine on which the operation is performed (StackMachine*)
-*	@exception		ExecutionError
-*/
+
 void Dpl::execute(StackMachine *stack)
 {
 	switch(fType)
@@ -29,8 +18,7 @@ void Dpl::execute(StackMachine *stack)
 		{
 			StackInteger p1;
 
-			// check if uppermost stackentry is of type integer
-			if(typeid(p1) != typeid(*stack->fStore[stack->fSP]))
+						if(typeid(p1) != typeid(*stack->fStore[stack->fSP]))
 			{
 				throw ExecutionError("instruction dpl: SP does not point to element of type integer.");
 			}
@@ -44,8 +32,7 @@ void Dpl::execute(StackMachine *stack)
 		case real:
 		{
 			StackReal p1;
-			// check if uppermost stackentry is of type real
-			if(typeid(p1) != typeid(*stack->fStore[stack->fSP]))
+						if(typeid(p1) != typeid(*stack->fStore[stack->fSP]))
 			{
 				throw ExecutionError("instruction dpl: SP does not point to element of type real.");
 			}
@@ -61,8 +48,7 @@ void Dpl::execute(StackMachine *stack)
 		{
 			StackBoolean p1;
 			
-			// check if uppermost stackentry is of type boolean
-			if(typeid(p1) != typeid(*stack->fStore[stack->fSP]))
+						if(typeid(p1) != typeid(*stack->fStore[stack->fSP]))
 			{
 				throw ExecutionError("instruction dpl: SP does not point to element of type boolean.");
 			}
@@ -78,8 +64,7 @@ void Dpl::execute(StackMachine *stack)
 		{
 			StackCharacter p1;
 			
-			// check if uppermost stackentry is of type character
-			if(typeid(p1) != typeid(*stack->fStore[stack->fSP]))
+						if(typeid(p1) != typeid(*stack->fStore[stack->fSP]))
 			{
 				throw ExecutionError("instruction dpl: SP does not point to element of type character.");
 			}
@@ -95,8 +80,7 @@ void Dpl::execute(StackMachine *stack)
 		{
 			StackAddress p1;
 
-			// check if constant is of type address
-			if(typeid(p1) != typeid(*stack->fStore[stack->fSP]))
+						if(typeid(p1) != typeid(*stack->fStore[stack->fSP]))
 			{
 				throw ExecutionError("instruction dpl: SP does not point to element of type address.");
 			}
@@ -109,21 +93,14 @@ void Dpl::execute(StackMachine *stack)
 		}
 	}
 	
-	// fSP = fSP + 1
-	++stack->fSP;
+		++stack->fSP;
 	
-	// adding cost of this instruction
-	stack->fTime.count("dpl");
+		stack->fTime.count("dpl");
 
 }
 
 
-/** 
-*	Prints the instuction into an outputstream
-*	@return			reference to ostream filled with the printed instruction
-*	@param os		reference to ostream (ostream&)	
-*	@exception		none
-*/
+
 ostream& Dpl::print(ostream &os) const
 {
 	os << "dpl " << printStackElementType(fType);

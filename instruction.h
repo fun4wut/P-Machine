@@ -1,4 +1,3 @@
-//instruction.h
 
 
 #ifndef INSTRUCTION_H
@@ -23,10 +22,7 @@ class Instruction;
 class Stackmachine;
 
 
-/**
-* 	@doc		Abstract base class from which all instruction-classes are derived
-*	@author 	Andy Zaidman
-*/
+
 class Instruction
 {
 	public:
@@ -34,15 +30,12 @@ class Instruction
 
 		Instruction();
 		virtual ~Instruction();
-		/// virtual function which will be overridden in non-abstract derived classes
-		virtual void execute(StackMachine *stack) = 0;
-		/// virtual function which will be overridden in non-abstract derived classes
-		virtual ostream& print(ostream &os) const = 0;
+				virtual void execute(StackMachine *stack) = 0;
+				virtual ostream& print(ostream &os) const = 0;
 		friend ostream& operator<<(ostream &os, const Instruction &kOutput);
 };
 
 
-// function prototype
 string printStackElementType(StackElementType type);
 
 

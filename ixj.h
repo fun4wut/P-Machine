@@ -1,4 +1,3 @@
-// ixj.h
 
 
 #ifndef IXJ_H
@@ -15,10 +14,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the indexed branch
-*	@author 	Andy Zaidman
-*/
+
 class Ixj : public Instruction
 {
 	public:

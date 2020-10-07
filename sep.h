@@ -1,4 +1,3 @@
-// sep.h
 
 
 #ifndef SEP_H
@@ -16,10 +15,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the sep instruction: sets the EP
-*	@author 	Andy Zaidman
-*/
+
 class Sep : public Instruction
 {
 	public:

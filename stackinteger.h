@@ -1,4 +1,3 @@
-// stackinteger.h
 
 
 #ifndef STACKINTEGER_H
@@ -6,10 +5,7 @@
 
 #include "stackelement.h"
 
-/**
-*	@doc 	Container for integer type
-*	@author	Andy Zaidman
-*/
+
 class StackInteger : public StackElement
 {
 	public:

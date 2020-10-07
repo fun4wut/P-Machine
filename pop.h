@@ -1,6 +1,3 @@
-//
-// Created by zerol on 10/1/19.
-//
 
 #ifndef P_POP_H
 #define P_POP_H
@@ -27,4 +24,4 @@ class Pop : public Instruction
 };
 
 
-#endif //P_POP_H
+#endif 

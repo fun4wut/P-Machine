@@ -1,4 +1,3 @@
-// smp.h
 
 
 #ifndef SMP_H
@@ -15,10 +14,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the "set MP" instruction
-*	@author 	Andy Zaidman
-*/
+
 class Smp : public Instruction
 {
 	public:

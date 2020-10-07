@@ -1,4 +1,3 @@
-// mul.h
 
 
 #ifndef MUL_H
@@ -15,10 +14,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the multiplication by multiplying the 2 uppermost stackpositions and replacing them by the result
-*	@author 	Andy Zaidman
-*/
+
 class Mul : public Instruction
 {
 	public:
@@ -28,8 +24,7 @@ class Mul : public Instruction
 		ostream& print(ostream &os) const;
 	
 	private:
-		/// keeps track of the types (integer or real)
-		StackElementType fType;
+				StackElementType fType;
 };
 
 

@@ -1,12 +1,8 @@
-// timecounter.cpp
 
 #include "timecounter.h"
 #include <iostream>
 
-/** 
-*	Constructor
-*	Initializes all values in the map (if the weights need to be changed, you have to do it here (weights are static)
-*/
+
 TimeCounter::TimeCounter() : fCounter(0)
 {
 	fWeights.insert(map<string, int>::value_type("pop", 1));
@@ -64,18 +60,11 @@ TimeCounter::TimeCounter() : fCounter(0)
 }
 
 
-/** 
-*	Destructor
-*/
+
 TimeCounter::~TimeCounter() {}
 
 
-/** 
-*	Looks up the weight of the instruction and adds it to the internal counter.
-*	@return					none
-*	@param kInstruction		the instruction that is currently executed
-*	@exception				none
-*/
+
 void TimeCounter::count(const string &kInstruction)
 {
 	map<string, int>::iterator it = fWeights.find(kInstruction);
@@ -88,11 +77,7 @@ void TimeCounter::count(const string &kInstruction)
 	fCounter += fWeights[kInstruction];
 }
 
-/** 
-*	Returns the weight of the instructions excuted up until now
-*	@return			total weight (int)
-*	@exception		none
-*/
+
 int TimeCounter::getTime()
 {
 	return fCounter;

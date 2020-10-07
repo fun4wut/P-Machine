@@ -1,4 +1,3 @@
-// ent.h
 
 
 #ifndef ENT_H

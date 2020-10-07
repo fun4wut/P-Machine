@@ -1,26 +1,15 @@
-// ind.cpp
 
 #include "ind.h"
 
-/** 
-*	Constructor
-*	@param type		specifies on which type to load indirectly (StackElementType)
-*/
+
 Ind::Ind(StackElementType type) : fType(type) {}
 
 
-/** 
-*	Destructor
-*/
+
 Ind::~Ind() {}
 
 
-/** 
-*	Checks whether the location pointed to by STORE[SP] contains an element of type address. Distinguishes between an indirect load from the stack or from the heap and then loads the element if the type of the element is correct
-*	@return			none
-*	@param stack	the machine on which the operation is performed (StackMachine*)
-*	@exception		ExecutionError
-*/
+
 void Ind::execute(StackMachine *stack)
 {
 	StackAddress p;
@@ -133,18 +122,12 @@ void Ind::execute(StackMachine *stack)
 	
 	delete oldpointer;	
 	
-	// adding cost of this instruction
-	stack->fTime.count("ind");
+		stack->fTime.count("ind");
 
 }
 
 
-/** 
-*	Prints the instuction into an outputstream
-*	@return			reference to ostream filled with the printed instruction
-*	@param os		reference to ostream (ostream&)	
-*	@exception		none
-*/
+
 ostream& Ind::print(ostream &os) const
 {
 	os << "ind " << printStackElementType(fType);

@@ -1,4 +1,3 @@
-// xor.h
 
 #ifndef Xor_H
 #define Xor_H
@@ -14,10 +13,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the xor instruction
-*	@author 	Andy Zaidman
-*/
+
 class Xor : public Instruction
 {
 public:

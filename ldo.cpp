@@ -1,27 +1,15 @@
-// ldo.cpp
 
 #include "ldo.h"
 
-/** 
-*	Constructor
-*	@param type		specifies which type to load (StackElementType)
-*	@param q		absolute address from which to load element (int)
-*/
+
 Ldo::Ldo(StackElementType type, int q) : fType(type), fQ(q) {}
 
 
-/** 
-*	Destructor
-*/
+
 Ldo::~Ldo() {}
 
 
-/** 
-*	Checks whether the element at location q is of the right type and then places it at STORE[SP]
-*	@return			none
-*	@param stack	the machine on which the operation is performed (StackMachine*)
-*	@exception		ExecutionError
-*/
+
 void Ldo::execute(StackMachine *stack)
 {
 	if(stack->fSP < fQ)
@@ -33,8 +21,7 @@ void Ldo::execute(StackMachine *stack)
 		{
 			StackInteger p1;
 
-			// check if STORE[q] is of type integer
-			if(typeid(p1) != typeid(*stack->fStore[fQ]))
+						if(typeid(p1) != typeid(*stack->fStore[fQ]))
 			{
 				throw ExecutionError("instruction ldo: type of STORE[q] is not of type integer.");
 			}
@@ -49,8 +36,7 @@ void Ldo::execute(StackMachine *stack)
 		{
 			StackReal p1;
 			
-			// check if STORE[q] is of type real
-			if(typeid(p1) != typeid(*stack->fStore[fQ]))
+						if(typeid(p1) != typeid(*stack->fStore[fQ]))
 			{
 				throw ExecutionError("instruction ldo: type of STORE[q] is not of type real.");
 			}
@@ -66,8 +52,7 @@ void Ldo::execute(StackMachine *stack)
 		{
 			StackBoolean p1;
 			
-			// check if STORE[q] is of type boolean
-			if(typeid(p1) != typeid(*stack->fStore[fQ]))
+						if(typeid(p1) != typeid(*stack->fStore[fQ]))
 			{
 				throw ExecutionError("instruction ldo: type of STORE[q] is not of type boolean.");
 			}
@@ -83,8 +68,7 @@ void Ldo::execute(StackMachine *stack)
 		{
 			StackCharacter p1;
 			
-			// check if STORE[q] is of type character
-			if(typeid(p1) != typeid(*stack->fStore[fQ]))
+						if(typeid(p1) != typeid(*stack->fStore[fQ]))
 			{
 				throw ExecutionError("instruction ldo: type of STORE[q] is not of type character.");
 			}
@@ -100,8 +84,7 @@ void Ldo::execute(StackMachine *stack)
 		{
 			StackAddress p1;
 
-			// check if STORE[q] is of type address
-			if(typeid(p1) != typeid(*stack->fStore[fQ]))
+						if(typeid(p1) != typeid(*stack->fStore[fQ]))
 			{
 				throw ExecutionError("instruction ldo: type of STORE[q] is not of type address.");
 			}
@@ -114,21 +97,14 @@ void Ldo::execute(StackMachine *stack)
 		}
 	}
 	
-	// fSP = fSP + 1
-	++stack->fSP;
+		++stack->fSP;
 	
-	// adding cost of this instruction
-	stack->fTime.count("ldo");
+		stack->fTime.count("ldo");
 
 }
 
 
-/** 
-*	Prints the instuction into an outputstream
-*	@return			reference to ostream filled with the printed instruction
-*	@param os		reference to ostream (ostream&)	
-*	@exception		none
-*/
+
 ostream& Ldo::print(ostream &os) const
 {
 	os << "ldo " << printStackElementType(fType) << " " << fQ;

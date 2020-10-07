@@ -1,4 +1,3 @@
-// lda.h
 
 
 #ifndef LDA_H
@@ -16,10 +15,7 @@ using namespace std;
 #include "instruction.h"
 
 
-/**
-* 	@doc		Implements the lda-instruction (load address for given difference in nesting depths p and a given relative address q)
-*	@author 	Andy Zaidman
-*/
+
 class Lda : public Instruction
 {
 	public:
